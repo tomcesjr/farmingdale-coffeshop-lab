@@ -10,6 +10,6 @@ public class Order {
 
     public void printReceipt(){
         System.out.println("Order Id: " + orderId);
-        System.out.println("Drink: " + drink);
+        System.out.println( drink+"\n");
     }
 }

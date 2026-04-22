@@ -35,11 +35,12 @@ public abstract class Drink {
 
 
     public String toString() {
-        return"Beverage: " + name +
+        String s= "Drink: " + name +
                 "\nTemperature: " + temp +
-                "\nSize: " + size +
-                "\nMilk: " + milkType +
-                "\nShots: " + numShots +
-                "\nSweetener: " + sweetener;
+                "\nSize: " + size;
+               if(milkType != "none"){s+="\nMilk: " + milkType;}
+            if(sweetener != "none"){s+="\nSweetener: " + sweetener;}
+            if(numShots != 0){s+="\nShots: " + numShots;}
+    return s;
     }
 }
