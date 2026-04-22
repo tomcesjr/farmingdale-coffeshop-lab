@@ -43,10 +43,10 @@ public abstract class Drink {
     public String toString() {
         String s= "Drink: " + name +
                 "\nSize: " + size;
-                if(temp!=null) s+= "\nTemp: " + temp;
-               if(milkType != "none"){s+="\nMilk: " + milkType;}
+                if(this.allowsTemp()) s+= "\nTemp: " + temp;
+               if(milkType != "none" && this.allowsMilk()){s+="\nMilk: " + milkType;}
             if(sweetener != "none"){s+="\nSweetener: " + sweetener;}
-            if(numShots != 0){s+="\nShots: " + numShots;}
+            if(numShots != 0 && this.allowsShots()){s+="\nShots: " + numShots;}
     return s;
     }
 }

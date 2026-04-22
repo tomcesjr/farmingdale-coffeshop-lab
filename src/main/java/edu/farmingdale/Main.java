@@ -18,6 +18,7 @@ public class Main {
               .setShots(2)
               .setSweetener("Lavender")
               .setTemp("Iced")
+              .setShots(3)
               .build();
       Order order2 = new Order(drink2,2);
       order2.printReceipt();
