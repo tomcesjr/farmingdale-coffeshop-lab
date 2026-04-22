@@ -1,4 +1,9 @@
 package edu.farmingdale;
 
-public class Coffee {
+public class Coffee extends Drink{
+    public Coffee(String temp){
+        super("Coffee", temp);
+    }
+
+
 }
