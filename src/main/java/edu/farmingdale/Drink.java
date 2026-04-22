@@ -3,22 +3,19 @@ package edu.farmingdale;
 public abstract class Drink {
 
     public String name;
-    public String temp="hot";
-    public String size="small";
+    public String temp=null;
+    public String size;
     public String milkType = "none";
     public int numShots=0;
     public String sweetener="none";
 
     //All drinks have a name and can be iced or hot
-    public Drink(String name, String temp){
+    public Drink(String name, String size){
         this.name = name;
-        this.temp = temp;
+        this.size = size;
     }
     //Builder setter methods
-    public Drink setSize(String size){
-        this.size = size;
-        return this;
-    }
+
     public Drink setMilkType(String milkType){
         this.milkType = milkType;
         return this;
@@ -32,12 +29,21 @@ public abstract class Drink {
         return this;
     }
 
+    public Drink setTemp(String temp){
+        this.temp = temp;
+        return this;
+    }
+    public abstract boolean allowsMilk();
+    public abstract boolean allowsShots();
+    public abstract boolean allowsTemp();
+
+
 
 
     public String toString() {
         String s= "Drink: " + name +
-                "\nTemperature: " + temp +
                 "\nSize: " + size;
+                if(temp!=null) s+= "\nTemp: " + temp;
                if(milkType != "none"){s+="\nMilk: " + milkType;}
             if(sweetener != "none"){s+="\nSweetener: " + sweetener;}
             if(numShots != 0){s+="\nShots: " + numShots;}

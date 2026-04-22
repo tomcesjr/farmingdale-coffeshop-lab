@@ -6,30 +6,32 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) {
 
-      Drink drink1 = new DrinkBuilder("Coffee", "Hot")
-              .setSize("Small")
+      Drink drink1 = new DrinkBuilder("Coffee", "Large")
               .setMilk("Almond Milk")
+              .setTemp("Hot")
               .build();
       Order order1 = new Order(drink1,1);
       order1.printReceipt();
 
-      Drink drink2 = new DrinkBuilder("Latte","Iced")
-              .setSize("Medium")
+      Drink drink2 = new DrinkBuilder("Latte","Large")
               .setMilk("Regular")
               .setShots(2)
               .setSweetener("Lavender")
+              .setTemp("Iced")
               .build();
       Order order2 = new Order(drink2,2);
       order2.printReceipt();
 
-      Drink drink3 = new DrinkBuilder("Tea","Hot")
-              .setSize("Large")
+      Drink drink3 = new DrinkBuilder("Tea","Medium")
               .setMilk("Skim Milk")
+              .setTemp("Iced")
               .build();
       Order order3 = new Order(drink3,3);
       order3.printReceipt();
 
-      Drink drink4=new DrinkBuilder("Cappuccino","Hot").setMilk("regular").build();
+      Drink drink4=new DrinkBuilder("Cappuccino","Small")
+              .setMilk("regular")
+              .build();
       Order order4 = new Order(drink4,4);
       order4.printReceipt();
 
